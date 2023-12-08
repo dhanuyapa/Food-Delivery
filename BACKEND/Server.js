@@ -25,6 +25,9 @@ connection.once("open", () => {
     console.log("Mongodb Connection Success!");
 });
 
+const customerRoutes = require('./routes/customers');
+app.use('/Customers', customerRoutes); // Mount the customer routes under /customer
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
